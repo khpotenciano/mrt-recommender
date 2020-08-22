@@ -1,0 +1,6 @@
+/notebooks/.ipynb_checkpoints/*
+/util/__pycache__/*
+/data/database/__pycache__/*
+/data/scraper/__pycache__/*
+/notebooks/__pycache__/*
+/data/database/mysql.json
