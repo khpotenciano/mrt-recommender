@@ -21,3 +21,7 @@ class Util:
     @classmethod
     def date_to_string(cls, date,format="%Y-%m-%d"):
         return datetime.strftime(date, format)
+
+    @classmethod
+    def string_to_time(cls,timestring,format="%H:%M"):
+        return datetime.strptime(timestring,format).time()

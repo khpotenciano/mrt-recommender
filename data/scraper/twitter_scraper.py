@@ -31,7 +31,7 @@ class TwitterScraper:
 
     def search_dates(self,from_date,to_date):
         self._twitter_browser.search(account=self._account_search,from_date=from_date,to_date=to_date)
-        time.sleep(2)
+        time.sleep(5)
         datequery = f"{Util.date_to_string(from_date)} to {Util.date_to_string(to_date)}"
         for link in self._twitter_browser.get_possible_links():
             try:

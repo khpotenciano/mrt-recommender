@@ -42,9 +42,9 @@ class TwitterBrowser:
             if account != None:
                 query_term += f"(from:{account}) "
             if to_date != None:
-                query_term += f" until:{to_date.strftime('%Y-%m-%d')}"
+                query_term += f" until:{to_date.strftime('%Y-%m-%d')} "
             if from_date != None:
-                query_term += f"since:{from_date.strftime('%Y-%m-%d')}"
+                query_term += f" since:{from_date.strftime('%Y-%m-%d')}"
             query_term = f"q={urllib.parse.quote(query_term)}&src=typed_query"
             return query_term
 
@@ -68,7 +68,7 @@ class TwitterBrowser:
 
     def visit_link(self, link):
         self._driver.get(link)
-        time.sleep(2)
+        time.sleep(4)
 
     def get_selenium_driver(self):
         return self._driver

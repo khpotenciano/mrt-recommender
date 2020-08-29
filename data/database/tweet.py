@@ -10,12 +10,18 @@ class Tweet(database.DB_BASE):
     datequery = Column(String)
 
     def save(self):
-        database.DB_SESSION.add(self)
-        database.DB_SESSION.commit()
+        try:
+            database.DB_SESSION.add(self)
+            database.DB_SESSION.commit()
+        except:
+            database.DB_SESSION.rollback()
 
     def delete(self):
-        database.DB_SESSION.delete(self)
-        database.DB_SESSION.commit()
+        try:
+            database.DB_SESSION.delete(self)
+            database.DB_SESSION.commit()
+        except:
+            database.DB_SESSION.rollback()
 
     @classmethod
     def get_blank_tweets(cls):

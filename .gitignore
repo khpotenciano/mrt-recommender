@@ -3,4 +3,6 @@
 /data/database/__pycache__/*
 /data/scraper/__pycache__/*
 /notebooks/__pycache__/*
+/data/cleaner/__pycache__/*
 /data/database/mysql.json
+/data/datasets/*.csv
