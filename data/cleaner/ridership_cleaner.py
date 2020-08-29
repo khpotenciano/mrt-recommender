@@ -31,7 +31,7 @@ class RidershipCleaner:
             path = os.path.expanduser(self._doc_path)
         else:
             path = os.path.abspath(self._doc_path)
-        df = pd.read_excel(open(path, "rb"),sheet_name=month)
+        df = pd.read_excel(open(path, "rb"),sheet_name=month.upper())
         temp_df = pd.DataFrame()
         temp_df['date'] = df['DATE']
         temp_df['time'] = df['TIME']
