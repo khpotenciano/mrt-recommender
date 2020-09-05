@@ -12,3 +12,8 @@ sys.path.append(SCRAPER_PATH)
 sys.path.append(CLEANER_PATH)
 sys.path.append(UTIL_PATH)
 sys.path.append(DATABASE_PATH)
+
+
+
+def get_dataset_path(file):
+    return os.path.join(DATASET_PATH, file)
