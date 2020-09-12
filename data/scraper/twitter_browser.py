@@ -38,7 +38,7 @@ class TwitterBrowser:
         query_term = ""
         if Util.valid_value(account,str) and Util.valid_value(from_date, datetime.datetime) and Util.valid_value(text, str) and Util.valid_value(to_date, datetime.datetime):
             if text != None:
-                query_term += f"{text} "
+                query_term += f"({text}) "
             if account != None:
                 query_term += f"(from:{account}) "
             if to_date != None:

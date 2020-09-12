@@ -3,7 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine
 import pandas as pd
 import import_files as MrtRecommendationDependencies
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, relationship
 
 
 def get_query_string():
@@ -24,6 +24,7 @@ DB_BASE = declarative_base()
 
 ### Database Table to Class Mapping
 from tweet import Tweet
+from train_update import TrainUpdate
 
 
 DB_BASE.metadata.create_all(DB_ENGINE)
