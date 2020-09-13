@@ -3,7 +3,7 @@ from sqlalchemy.orm import relationship
 
 import database
 import re
-from train_update import TrainUpdate 
+from train_update import TrainUpdate
 from datetime import datetime
 from base_model import BaseModel
 
