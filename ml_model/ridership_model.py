@@ -12,13 +12,15 @@ class RidershipTransformer:
 
 
     def fit(data):
-        self._model.fit(prep_data(self._training_data))
+        self._model.fit(self.prep_data(train_set))
 
 
-    def prep_data(data):
+    def prep_data(data,training=True):
         new_df = data.copy()
-        new_df['ds'] = data.index
-        new_df['y'] = data[self._field]
+        if 'ds' not in new_df.columns:
+            new_df['ds'] = data.index
+        if training:
+            new_df['y'] = data[self._field]
         return new_df
 
 
@@ -27,7 +29,7 @@ class RidershipTransformer:
         return self._model.predict(predict_df)
 
     def predict(df):
-        return self._model.predict(df)
+        return self._model.predict(self.prep_data(df,False))
 
     def predict_steps(steps):
         predict_df = self._model.make_future_dataframe(periods=steps,freq='h',include_history=False)
