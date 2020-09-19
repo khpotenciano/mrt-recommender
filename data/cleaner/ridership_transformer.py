@@ -17,9 +17,12 @@ class RidershipTransformer:
         transformed_df['exit'] = self._df['exit']
         if save_csv:
             self.save_csv(filename, transformed_df)
+        self._transformed_df = transformed_df
         return transformed_df
 
-    def save_csv(self,filename,df):
+    def save_csv(self,filename,df=None):
+        if df == None:
+            df = self._transformed_df
         filepath = os.path.join(MrtRecommendationDependencies.DATASET_PATH, filename)
         df.to_csv(filepath, index=False)
         print(f"Dataframe saved to {filepath}")
