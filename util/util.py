@@ -19,6 +19,9 @@ class Util:
         return date + timedelta(days=delta)
 
     @classmethod
+    def get_next_hour(cls,date,delta):
+        return date + timedelta(hours=delta)
+    @classmethod
     def date_to_string(cls, date,format="%Y-%m-%d"):
         return datetime.strftime(date, format)
 
