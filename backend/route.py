@@ -23,3 +23,6 @@ def get_prediction():
     station = request.args.get('station')
     datetime = Util.string_to_date(request.args.get('datetime'),"%Y-%m-%d %H:%M")
     return model.predict(station,datetime)
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0')

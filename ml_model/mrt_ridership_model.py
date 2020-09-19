@@ -3,6 +3,7 @@ import pandas as pd
 import import_files as MrtRecommendationDependencies
 from util import Util
 import pickle5 as pickle
+import numpy as np
 
 class MrtRidershipModel:
 
@@ -35,8 +36,8 @@ class MrtRidershipModel:
         hour_prior = Util.get_next_hour(trip_time, -1)
         hour_after = Util.get_next_hour(trip_time, 1)
         df = pd.DataFrame(data=[hour_prior,trip_time,hour_after],columns=["ds"])
-        entry_pred = self._models[station]['entry'].predict(df)
-        exit_pred = self._models[station]['exit'].predict(df)
+        entry_pred = np.round(self._models[station]['entry'].predict(df))
+        exit_pred = np.round(self._models[station]['exit'].predict(df))
         return_df = pd.DataFrame()
         return_df['ds'] = df['ds']
         return_df['entry_pred'] = entry_pred['prediction']
