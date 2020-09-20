@@ -28,7 +28,6 @@ class Recommender:
         #     prev_station_pred = self.predict_per_station(prev_station,triptime)
         # if next_station != None:
         #     next_station_pred = self.predict_per_station(next_station,triptime)
-        return station_prediction
         return {
             'station': {'name': station, 'prediction': station_prediction.to_dict(orient='records')}
         }
