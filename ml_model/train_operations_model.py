@@ -17,7 +17,7 @@ class TrainOperationsModel:
             self._model = pickle.load(open(MrtRecommendationDependencies.get_model_path(f"{self._field}_model.sav"), "rb"))
 
     def dump_model(self):
-        pickle.dump(self._models, open(MrtRecommendationDependencies.get_model_path(f"{self._field}_model.sav"), "wb"))
+        pickle.dump(self._model, open(MrtRecommendationDependencies.get_model_path(f"{self._field}_model.sav"), "wb"))
 
     def init_training_data(self):
 
